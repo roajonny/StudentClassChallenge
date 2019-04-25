@@ -1,0 +1,84 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+/*
+Enter code for class Student here.
+Read statement for specification.
+*/
+
+//My source code below line**********************************************************
+class Student {
+    private:
+      int age{};
+      string first_name;
+      string last_name;
+      int standard;
+    
+    public:
+      void set_age(int age);
+      void set_first_name(string name);
+      void set_last_name(string last);
+      void set_standard(int standard);
+      int get_age();
+      string get_first_name();
+      string get_last_name();
+      int get_standard();
+      string to_string();
+      
+};
+
+void Student::set_age(int age_val) {
+    age = age_val;
+}
+void Student::set_first_name(string name_val) {
+    first_name = name_val;
+}
+void Student::set_last_name(string last_val) {
+    last_name = last_val;
+}
+void Student::set_standard(int standard_val) {
+    standard = standard_val;
+}
+//write the get methods now
+int Student::get_age() {
+    return age;
+}
+string Student::get_first_name() {
+    return first_name;
+}
+string Student::get_last_name() {
+    return last_name;
+}
+int Student::get_standard() {
+    return standard;
+}
+string Student::to_string() {
+    string age_string = std::to_string(age);
+    string standard_str = std::to_string(standard);
+    return (age_string + "," + first_name + "," + last_name + "," + standard_str);
+}
+
+//My source code above line**********************************************************
+int main() {
+    int age, standard;
+    string first_name, last_name;
+    
+    cin >> age >> first_name >> last_name >> standard;
+    
+    Student st;
+    st.set_age(age);
+    st.set_standard(standard);
+    st.set_first_name(first_name);
+    st.set_last_name(last_name);
+    
+    cout << st.get_age() << "\n";
+    cout << st.get_last_name() << ", " << st.get_first_name() << "\n";
+    cout << st.get_standard() << "\n";
+    cout << "\n";
+    cout << st.to_string();
+    
+    return 0;
+}
+
